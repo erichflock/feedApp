@@ -8,10 +8,10 @@
 import Foundation
 
 public struct FeedImage: Equatable {
-    let id: UUID
-    let description: String?
-    let location: String?
-    let url: URL
+    public let id: UUID
+    public let description: String?
+    public let location: String?
+    public let url: URL
     
     public init(id: UUID, description: String?, location: String?, url: URL) {
         self.id = id

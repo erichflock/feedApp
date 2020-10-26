@@ -14,8 +14,17 @@ public enum RetrieveCachedFeedResult {
 }
 
 public protocol FeedStore {
+    
+    /// The completion handler can be invoked in any thread.
+    /// Clients are responsible to dispatch to appropriate threads, if needed.
     typealias DeletionCompletion = (Error?) -> Void
+    
+    /// The completion handler can be invoked in any thread.
+    /// Clients are responsible to dispatch to appropriate threads, if needed.
     typealias InsertionCompletion = (Error?) -> Void
+    
+    /// The completion handler can be invoked in any thread.
+    /// Clients are responsible to dispatch to appropriate threads, if needed.
     typealias RetrievalCompletion = (RetrieveCachedFeedResult) -> Void
 
     func deleteCachedFeed(completion: @escaping DeletionCompletion)
